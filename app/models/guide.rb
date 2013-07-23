@@ -3,5 +3,5 @@ class Guide < ActiveRecord::Base
 
 	validates :name, :presence => true
 
-	has_many :steps
+	has_many :steps, :dependent => :delete_all
 end
