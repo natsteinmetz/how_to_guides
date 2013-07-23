@@ -10,6 +10,7 @@
   <%= @guide.description %>
 </p>
 
-
+<%= link_to 'New Step', new_guide_step_path(@guide) %> |
 <%= link_to 'Edit', edit_guide_path(@guide) %> |
 <%= link_to 'Back', guides_path %>
+

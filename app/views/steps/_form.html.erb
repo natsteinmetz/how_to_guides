@@ -1,0 +1,15 @@
+<%= form_for [@guide, @step] do |f| %>
+	binding.pry
+	<%= f.error_messages %>
+	<p id='notice'> <%= notice %> </p>
+	<p>
+		<%= f.label :name %><br>
+		<%= f.text_field :name %>
+	</p> 
+	<p>
+		<%= f.label :number %><br>
+		<%= f.number_field :number %>
+	</p>
+	<%= f.submit %>
+<% end %>
+

@@ -1,5 +1,9 @@
 HowToGuides::Application.routes.draw do
-  resources :guides
+	root :to => "guides#index"
+
+	resources :guides do
+		resources :steps
+	end
 
 
   # The priority is based upon order of creation:
