@@ -14,3 +14,10 @@
 <%= link_to 'Edit', edit_guide_path(@guide) %> |
 <%= link_to 'Back', guides_path %>
 
+<ul id='steps'>
+	<% @guide.steps.each do |step| %>
+		<li>
+		<%= step.number %> - <%= link_to step.name, [@guide, step] %>
+		</li>
+	<% end %>
+</ul>
