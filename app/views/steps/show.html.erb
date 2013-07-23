@@ -1,5 +1,7 @@
 <div id='step'>
 	<%= @step.number %> : <%= @step.name %>
 	<%= link_to "Edit Step", [:edit, @guide, @step] %>
+	<%= link_to "Delete Step", [@guide, @step], :method => :delete, 
+			:confirm => "Are you sure you want to delete this ticket?" %>
 </div>
 

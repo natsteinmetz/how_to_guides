@@ -28,6 +28,11 @@ class StepsController < ApplicationController
 			render :action => "edit"
 		end
 	end
+	def destroy
+		@step.destroy
+		flash[:notice] = "Step has been deleted."
+		redirect_to @guide
+	end
 
 private
 	def find_guide

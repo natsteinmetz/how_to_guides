@@ -13,7 +13,6 @@ feature "Viewing steps" do
 		page.should have_content("Make it shiny!")
 
 		click_link "Make it shiny!"
-		save_and_open_page
 		page.should have_content("1")
 		page.should have_content("Make it shiny!")
 	end
