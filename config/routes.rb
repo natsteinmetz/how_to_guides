@@ -1,10 +1,13 @@
 HowToGuides::Application.routes.draw do
-	root :to => "guides#index"
+	scope ":locale", locale: /#{I18n.available_locales.join("|")}/ do
+    root :to => "guides#index"
+    resources :guides do
+		  resources :steps
+	   end
+  end
 
-	resources :guides do
-		resources :steps
-	end
-
+  match '*path', to: redirect("/#{I18n.default_locale}/%{path}"), constraints: lambda { |req| !req.path.starts_with? "/#{I18n.default_locale}/" }
+  match '', to: redirect("/#{I18n.default_locale}")
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
